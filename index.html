@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Intimacy Unfiltered | Premium Digital Guides</title>
+  <meta name="description" content="Simple, practical digital guides for better communication, confidence, relationships and lifestyle.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* =========================
+       RESET
+    ========================= */
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    :root{
+      --bg:#fff8fa;
+      --bg2:#fff1f5;
+      --white:#ffffff;
+      --text:#291820;
+      --muted:#7c6870;
+
+      --pink:#c8436c;
+      --pink-dark:#a72d55;
+      --pink-light:#ffe4ec;
+
+      --plum:#492332;
+      --plum2:#6a3146;
+
+      --border:rgba(112,48,72,.11);
+
+      --shadow:
+        0 18px 55px rgba(78,34,50,.10);
+    }
+
+    body{
+      font-family:"DM Sans",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 0% 0%,#ffdce7 0,transparent 27%),
+        radial-gradient(circle at 100% 30%,#f9dce5 0,transparent 25%),
+        linear-gradient(180deg,#fff9fb,#fff,#fff6f8);
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    img{
+      max-width:100%;
+    }
+
+
+    /* =========================
+       BACKGROUND
+    ========================= */
+
+    .blob{
+      position:fixed;
+      border-radius:50%;
+      filter:blur(90px);
+      opacity:.35;
+      pointer-events:none;
+      z-index:-1;
+    }
+
+    .blob1{
+      width:300px;
+      height:300px;
+      background:#ef9db6;
+      left:-130px;
+      top:-100px;
+    }
+
+    .blob2{
+      width:350px;
+      height:350px;
+      background:#f6c6d5;
+      right:-170px;
+      top:400px;
+    }
+
+
+    /* =========================
+       MAIN
+    ========================= */
+
+    .container{
+      width:min(100% - 30px,700px);
+      margin:auto;
+      padding:35px 0 70px;
+    }
+
+
+    /* =========================
+       TOP BRAND
+    ========================= */
+
+    .top-brand{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      font-size:12px;
+      letter-spacing:1.6px;
+      font-weight:700;
+      color:#9d526b;
+      margin-bottom:30px;
+    }
+
+    .top-brand span{
+      width:5px;
+      height:5px;
+      border-radius:50%;
+      background:var(--pink);
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero{
+      text-align:center;
+    }
+
+    .profile-wrap{
+      width:138px;
+      height:138px;
+      margin:0 auto 21px;
+      position:relative;
+    }
+
+    .profile-wrap:before{
+      content:"";
+      position:absolute;
+      inset:-5px;
+      border-radius:50%;
+      background:
+        linear-gradient(
+          135deg,
+          #f4b0c4,
+          #c8446d,
+          #8d294c,
+          #f4b0c4
+        );
+      z-index:-1;
+    }
+
+    .profile{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:50%;
+      border:4px solid white;
+      box-shadow:
+        0 16px 40px rgba(107,42,65,.22);
+    }
+
+    .online{
+      position:absolute;
+      bottom:7px;
+      right:7px;
+      width:22px;
+      height:22px;
+      background:#50b77d;
+      border:4px solid white;
+      border-radius:50%;
+    }
+
+    .creator-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      padding:8px 13px;
+      background:rgba(255,255,255,.8);
+      backdrop-filter:blur(12px);
+      border:1px solid var(--border);
+      border-radius:100px;
+      color:#9e3c60;
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.8px;
+      margin-bottom:14px;
+    }
+
+    h1{
+      font-family:"Playfair Display",serif;
+      font-size:clamp(36px,9vw,57px);
+      line-height:.98;
+      letter-spacing:-2px;
+      margin-bottom:17px;
+    }
+
+    h1 span{
+      color:var(--pink);
+    }
+
+    .hero-description{
+      max-width:540px;
+      margin:auto;
+      font-size:15px;
+      line-height:1.75;
+      color:var(--muted);
+    }
+
+    .hero-description strong{
+      color:#53313e;
+    }
+
+
+    /* =========================
+       HERO CTA
+    ========================= */
+
+    .hero-cta{
+      margin-top:22px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:var(--plum);
+      color:white;
+      padding:14px 22px;
+      border-radius:100px;
+      font-size:13px;
+      font-weight:700;
+      box-shadow:0 12px 30px rgba(70,32,47,.22);
+      transition:.25s;
+    }
+
+    .hero-cta:hover{
+      transform:translateY(-2px);
+    }
+
+
+    /* =========================
+       TRUST STRIP
+    ========================= */
+
+    .trust-strip{
+      margin-top:32px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      background:rgba(255,255,255,.72);
+      backdrop-filter:blur(15px);
+      border:1px solid var(--border);
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 10px 35px rgba(74,31,47,.05);
+    }
+
+    .trust-box{
+      padding:16px 8px;
+      text-align:center;
+      border-right:1px solid var(--border);
+    }
+
+    .trust-box:last-child{
+      border-right:none;
+    }
+
+    .trust-icon{
+      font-size:18px;
+      margin-bottom:5px;
+    }
+
+    .trust-title{
+      font-size:11px;
+      font-weight:700;
+      color:#59404a;
+    }
+
+    .trust-small{
+      font-size:9px;
+      color:#a18b94;
+      margin-top:2px;
+    }
+
+
+    /* =========================
+       SECTION HEADER
+    ========================= */
+
+    .section{
+      margin-top:55px;
+    }
+
+    .section-head{
+      text-align:center;
+      margin-bottom:25px;
+    }
+
+    .eyebrow{
+      color:var(--pink);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      margin-bottom:8px;
+    }
+
+    .section-head h2{
+      font-family:"Playfair Display",serif;
+      font-size:32px;
+      line-height:1.15;
+      letter-spacing:-.7px;
+    }
+
+    .section-head p{
+      color:var(--muted);
+      font-size:13px;
+      margin-top:8px;
+      line-height:1.6;
+    }
+
+
+    /* =========================
+       PRODUCT CARDS
+    ========================= */
+
+    .products{
+      display:grid;
+      gap:24px;
+    }
+
+    .product{
+      background:rgba(255,255,255,.9);
+      border:1px solid var(--border);
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      transition:.35s ease;
+    }
+
+    .product:hover{
+      transform:translateY(-5px);
+      box-shadow:
+        0 25px 65px rgba(78,34,50,.15);
+    }
+
+    .product-img-wrap{
+      position:relative;
+      aspect-ratio:16/10;
+      overflow:hidden;
+      background:#f6e5eb;
+    }
+
+    .product-img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition:.5s ease;
+    }
+
+    .product:hover .product-img{
+      transform:scale(1.025);
+    }
+
+    .product-badge{
+      position:absolute;
+      top:15px;
+      left:15px;
+      background:rgba(255,255,255,.93);
+      backdrop-filter:blur(10px);
+      padding:8px 12px;
+      border-radius:100px;
+      font-size:10px;
+      font-weight:800;
+      color:var(--pink-dark);
+      box-shadow:0 6px 20px rgba(0,0,0,.08);
+    }
+
+    .product-body{
+      padding:23px;
+    }
+
+    .product-header{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:15px;
+    }
+
+    .product-name{
+      font-family:"Playfair Display",serif;
+      font-size:27px;
+      line-height:1.15;
+    }
+
+    .price{
+      background:var(--pink-light);
+      color:var(--pink-dark);
+      font-size:15px;
+      font-weight:800;
+      padding:8px 11px;
+      border-radius:10px;
+      white-space:nowrap;
+    }
+
+    .product-sub{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.65;
+      margin-top:10px;
+    }
+
+
+    /* BENEFITS */
+
+    .benefits{
+      margin-top:17px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:9px;
+    }
+
+    .benefit{
+      display:flex;
+      gap:7px;
+      align-items:center;
+      background:#fff8fa;
+      border:1px solid var(--border);
+      padding:10px;
+      border-radius:12px;
+      font-size:11px;
+      font-weight:600;
+      color:#624a53;
+    }
+
+    .tick{
+      color:var(--pink);
+      font-weight:800;
+    }
+
+
+    /* PRODUCT BUTTON */
+
+    .product-btn{
+      margin-top:19px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:8px;
+      width:100%;
+      padding:16px;
+      background:
+        linear-gradient(
+          135deg,
+          var(--pink),
+          var(--pink-dark)
+        );
+      color:white;
+      border-radius:14px;
+      font-size:14px;
+      font-weight:800;
+      box-shadow:
+        0 11px 28px rgba(180,48,89,.23);
+      transition:.25s;
+    }
+
+    .product-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:
+        0 15px 35px rgba(180,48,89,.32);
+    }
+
+    .instant{
+      text-align:center;
+      font-size:10px;
+      color:#a08b93;
+      margin-top:9px;
+    }
+
+
+    /* =========================
+       WHICH GUIDE
+    ========================= */
+
+    .choice-box{
+      background:
+        linear-gradient(
+          135deg,
+          var(--plum),
+          var(--plum2)
+        );
+      border-radius:28px;
+      padding:30px 24px;
+      color:white;
+      box-shadow:
+        0 20px 55px rgba(69,31,46,.2);
+    }
+
+    .choice-box h2{
+      font-family:"Playfair Display",serif;
+      text-align:center;
+      font-size:30px;
+    }
+
+    .choice-intro{
+      text-align:center;
+      color:#e8d9de;
+      font-size:13px;
+      margin-top:7px;
+    }
+
+    .choices{
+      display:grid;
+      gap:11px;
+      margin-top:23px;
+    }
+
+    .choice{
+      background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.13);
+      padding:15px;
+      border-radius:15px;
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+
+    .choice-icon{
+      min-width:36px;
+      height:36px;
+      background:rgba(255,255,255,.12);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:10px;
+    }
+
+    .choice h3{
+      font-size:13px;
+      margin-bottom:3px;
+    }
+
+    .choice p{
+      font-size:11px;
+      line-height:1.5;
+      color:#d8c7cd;
+    }
+
+
+    /* =========================
+       WHY DIGITAL
+    ========================= */
+
+    .why-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    .why{
+      background:rgba(255,255,255,.75);
+      border:1px solid var(--border);
+      padding:20px 16px;
+      border-radius:18px;
+    }
+
+    .why-icon{
+      font-size:23px;
+      margin-bottom:9px;
+    }
+
+    .why h3{
+      font-size:13px;
+      margin-bottom:5px;
+    }
+
+    .why p{
+      font-size:11px;
+      line-height:1.55;
+      color:var(--muted);
+    }
+
+
+    /* =========================
+       FAQ
+    ========================= */
+
+    .faq{
+      display:grid;
+      gap:10px;
+    }
+
+    details{
+      background:rgba(255,255,255,.8);
+      border:1px solid var(--border);
+      border-radius:15px;
+      padding:0 17px;
+    }
+
+    summary{
+      cursor:pointer;
+      list-style:none;
+      padding:17px 0;
+      font-size:13px;
+      font-weight:700;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+    }
+
+    summary::-webkit-details-marker{
+      display:none;
+    }
+
+    summary:after{
+      content:"+";
+      color:var(--pink);
+      font-size:19px;
+    }
+
+    details[open] summary:after{
+      content:"−";
+    }
+
+    details p{
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.7;
+      padding:0 0 17px;
+    }
+
+
+    /* =========================
+       FINAL CTA
+    ========================= */
+
+    .final-cta{
+      text-align:center;
+      background:
+        linear-gradient(
+          145deg,
+          #fff0f5,
+          #fff
+        );
+      border:1px solid var(--border);
+      border-radius:27px;
+      padding:32px 20px;
+      margin-top:50px;
+    }
+
+    .heart{
+      font-size:30px;
+      margin-bottom:10px;
+    }
+
+    .final-cta h2{
+      font-family:"Playfair Display",serif;
+      font-size:29px;
+    }
+
+    .final-cta p{
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.6;
+      max-width:450px;
+      margin:8px auto 0;
+    }
+
+    .final-btn{
+      display:inline-flex;
+      margin-top:17px;
+      padding:14px 21px;
+      border-radius:100px;
+      background:var(--pink);
+      color:white;
+      font-size:12px;
+      font-weight:800;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer{
+      text-align:center;
+      margin-top:35px;
+      color:#a28c94;
+      font-size:10px;
+      line-height:1.8;
+    }
+
+    footer strong{
+      color:#674953;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media(max-width:520px){
+
+      .container{
+        width:min(100% - 22px,700px);
+        padding-top:25px;
+      }
+
+      .top-brand{
+        margin-bottom:23px;
+      }
+
+      .profile-wrap{
+        width:120px;
+        height:120px;
+      }
+
+      h1{
+        font-size:39px;
+      }
+
+      .hero-description{
+        font-size:13px;
+        padding:0 5px;
+      }
+
+      .section{
+        margin-top:45px;
+      }
+
+      .section-head h2{
+        font-size:28px;
+      }
+
+      .product-name{
+        font-size:23px;
+      }
+
+      .product-body{
+        padding:18px;
+      }
+
+      .benefits{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .why-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .trust-box{
+        padding:13px 4px;
+      }
+
+      .trust-title{
+        font-size:9px;
+      }
+
+      .trust-small{
+        font-size:8px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+
+
+<main class="container">
+
+
+  <!-- ======================
+       BRAND
+  ======================= -->
+
+  <div class="top-brand">
+    <span></span>
+    INTIMACY UNFILTERED
+    <span></span>
+  </div>
+
+
+
+  <!-- ======================
+       HERO
+  ======================= -->
+
+  <section class="hero">
+
+    <div class="profile-wrap">
+
+      <img
+        src="profile.jpg"
+        class="profile"
+        alt="Intimacy Unfiltered"
+      >
+
+      <div class="online"></div>
+
+    </div>
+
+
+    <div class="creator-tag">
+      ♡ PRACTICAL DIGITAL GUIDES
+    </div>
+
+
+    <h1>
+      Let's Talk About<br>
+      What <span>Actually Matters.</span>
+    </h1>
+
+
+    <p class="hero-description">
+
+      No complicated words. No awkward lectures.
+
+      <strong>
+        Just simple, practical guides
+      </strong>
+
+      about confidence, communication,
+      relationships and becoming a better version
+      of yourself.
+
+    </p>
+
+
+    <a href="#ebooks" class="hero-cta">
+      Explore My Guides ↓
+    </a>
+
+  </section>
+
+
+
+  <!-- ======================
+       TRUST
+  ======================= -->
+
+  <div class="trust-strip">
+
+    <div class="trust-box">
+
+      <div class="trust-icon">⚡</div>
+
+      <div class="trust-title">
+        Instant Access
+      </div>
+
+      <div class="trust-small">
+        Digital Delivery
+      </div>
+
+    </div>
+
+
+    <div class="trust-box">
+
+      <div class="trust-icon">🔒</div>
+
+      <div class="trust-title">
+        Secure Payment
+      </div>
+
+      <div class="trust-small">
+        Safe Checkout
+      </div>
+
+    </div>
+
+
+    <div class="trust-box">
+
+      <div class="trust-icon">📱</div>
+
+      <div class="trust-title">
+        Read Anywhere
+      </div>
+
+      <div class="trust-small">
+        Phone Friendly
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ======================
+       PRODUCTS
+  ======================= -->
+
+  <section class="section" id="ebooks">
+
+
+    <div class="section-head">
+
+      <div class="eyebrow">
+        Explore The Collection
+      </div>
+
+      <h2>
+        Pick What You Want<br>
+        to Work On ✨
+      </h2>
+
+      <p>
+        Easy-to-understand guides you can read
+        privately, at your own pace.
+      </p>
+
+    </div>
+
+
+
+    <div class="products">
+
+
+      <!-- PRODUCT 1 -->
+
+      <article class="product">
+
+        <div class="product-img-wrap">
+
+          <img
+            src="https://files.creatly.me/cdn-cgi/image/width%3D1080%2Cfit%3Dscale-down%2Cquality%3D85%2Cformat%3Dauto/products/adc1933f-7845-4a7a-8417-20a990f88c2a/covers/b7d331a7-f37b-44f2-b259-02a2ae2b45b1.jpg"
+            class="product-img"
+            alt="Exercise and Food Combo"
+          >
+
+          <div class="product-badge">
+            💪 FITNESS & LIFESTYLE
+          </div>
+
+        </div>
+
+
+        <div class="product-body">
+
+
+          <div class="product-header">
+
+            <h2 class="product-name">
+              Exercise &<br>Food Combo
+            </h2>
+
+            <div class="price">
+              ₹379
+            </div>
+
+          </div>
+
+
+          <p class="product-sub">
+
+            Want to improve your routine but don't know
+            where to start?
+
+            This practical combo helps you understand
+            exercise, food and healthier daily habits
+            without making things complicated.
+
+          </p>
+
+
+          <div class="benefits">
+
+            <div class="benefit">
+              <span class="tick">✓</span>
+              Home Exercise
+            </div>
+
+            <div class="benefit">
+              <span class="tick">✓</span>
+              Food Guidance
+            </div>
+
+            <div class="benefit">
+              <span class="tick">✓</span>
+              Easy Routine
+            </div>
+
+            <div class="benefit">
+              <span class="tick">✓</span>
+              Beginner Friendly
+            </div>
+
+          </div>
+
+
+          <a
+            href="https://creatly.me/intimacy-unfiltered/p/exercise-and-food-combo"
+            target="_blank"
+            rel="noopener"
+            class="product-btn"
+          >
+            Get Exercise & Food Combo →
+          </a>
+
+
+          <div class="instant">
+            ⚡ Digital product • Get access after purchase
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+
+      <!-- PRODUCT 2 -->
+
+      <article class="product">
+
+        <div class="product-img-wrap">
+
+          <img
+            src="https://files.creatly.me/cdn-cgi/image/width%3D1080%2Cfit%3Dscale-down%2Cquality%3D85%2Cformat%3Dauto/products/adc1933f-7845-4a7a-8417-20a990f88c2a/covers/854f93a9-d224-41d3-94f3-cd2440fcc5ca.jpg"
+            class="product-img"
+            alt="Dirty Talk Guide"
+          >
+
+          <div class="product-badge">
+            ❤️ COMMUNICATION GUIDE
+          </div>
+
+        </div>
+
+
+        <div class="product-body">
+
+
+          <div class="product-header">
+
+            <h2 class="product-name">
+              Dirty Talk
+            </h2>
+
+            <div class="price">
+              ₹379
+            </div>
+
+          </div>
+
+
+          <p class="product-sub">
+
+            Sometimes the biggest problem isn't attraction —
+            it's not knowing what to say.
+
+            This guide is designed to help adults communicate
+            more confidently, naturally and comfortably
+            with their partner.
+
+          </p>
+
+
+          <div class="benefits">
+
+            <div class="benefit">
+              <span class="tick">✓</span>
+              Better Conversations
+            </div>
+
+            <div class="benefit">
+              <span class="tick">✓</span>
+              More Confidence
+            </div>
+
+            <div class="benefit">
+              <span class="tick">✓</span>
+              Easy Language
+            </div>
+
+            <div class="benefit">
+              <span class="tick">✓</span>
+              Adult Guide
+            </div>
+
+          </div>
+
+
+          <a
+            href="https://creatly.me/intimacy-unfiltered/p/dirty-talk"
+            target="_blank"
+            rel="noopener"
+            class="product-btn"
+          >
+            Explore Dirty Talk →
+          </a>
+
+
+          <div class="instant">
+            🔒 Private digital purchase • Read at your own pace
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================
+       WHICH ONE?
+  ======================= -->
+
+  <section class="section">
+
+
+    <div class="choice-box">
+
+      <h2>
+        Which One Is For You?
+      </h2>
+
+      <p class="choice-intro">
+        Still confused? Start here 👇
+      </p>
+
+
+      <div class="choices">
+
+
+        <div class="choice">
+
+          <div class="choice-icon">
+            💪
+          </div>
+
+          <div>
+
+            <h3>
+              Want to work on your body & routine?
+            </h3>
+
+            <p>
+              Start with Exercise & Food Combo for
+              practical lifestyle, food and exercise guidance.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="choice">
+
+          <div class="choice-icon">
+            ❤️
+          </div>
+
+          <div>
+
+            <h3>
+              Want better communication with your partner?
+            </h3>
+
+            <p>
+              Start with Dirty Talk to understand how
+              to communicate with more confidence and comfort.
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================
+       WHY
+  ======================= -->
+
+  <section class="section">
+
+
+    <div class="section-head">
+
+      <div class="eyebrow">
+        Made For Real People
+      </div>
+
+      <h2>
+        No Complicated Gyaan.
+      </h2>
+
+      <p>
+        Just useful information you can actually understand
+        and apply.
+      </p>
+
+    </div>
+
+
+    <div class="why-grid">
+
+
+      <div class="why">
+
+        <div class="why-icon">
+          💬
+        </div>
+
+        <h3>
+          Simple Language
+        </h3>
+
+        <p>
+          Easy-to-understand guidance without unnecessary
+          complicated terminology.
+        </p>
+
+      </div>
+
+
+      <div class="why">
+
+        <div class="why-icon">
+          🔐
+        </div>
+
+        <h3>
+          Read Privately
+        </h3>
+
+        <p>
+          Digital format means you can read comfortably
+          on your own device.
+        </p>
+
+      </div>
+
+
+      <div class="why">
+
+        <div class="why-icon">
+          ⚡
+        </div>
+
+        <h3>
+          Quick Access
+        </h3>
+
+        <p>
+          No waiting for physical delivery. Access your
+          digital guide after purchase.
+        </p>
+
+      </div>
+
+
+      <div class="why">
+
+        <div class="why-icon">
+          ♡
+        </div>
+
+        <h3>
+          Practical First
+        </h3>
+
+        <p>
+          Focused on useful ideas and guidance rather than
+          unnecessary theory.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================
+       FAQ
+  ======================= -->
+
+  <section class="section">
+
+
+    <div class="section-head">
+
+      <div class="eyebrow">
+        Got Questions?
+      </div>
+
+      <h2>
+        Quick Answers.
+      </h2>
+
+    </div>
+
+
+    <div class="faq">
+
+
+      <details>
+
+        <summary>
+          Are these physical books?
+        </summary>
+
+        <p>
+          No. These are digital products, so there is no
+          physical book or shipping required.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          How will I receive my guide?
+        </summary>
+
+        <p>
+          After completing your purchase on the product page,
+          follow the delivery instructions provided there to
+          access your digital content.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Can I read it on my phone?
+        </summary>
+
+        <p>
+          Yes. The guides are digital, making them convenient
+          to access from compatible phones and other devices.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Is my purchase private?
+        </summary>
+
+        <p>
+          Your purchase is completed through the secure
+          checkout available on the linked product page.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Which guide should I start with?
+        </summary>
+
+        <p>
+          Choose Exercise & Food Combo if your focus is
+          fitness and lifestyle. Choose Dirty Talk if your
+          focus is adult relationship communication and
+          confidence.
+        </p>
+
+      </details>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================
+       FINAL CTA
+  ======================= -->
+
+  <div class="final-cta">
+
+    <div class="heart">
+      💗
+    </div>
+
+    <h2>
+      Your Questions Don't<br>
+      Have to Stay Awkward.
+    </h2>
+
+    <p>
+      Explore practical guides designed to make
+      difficult topics simpler, clearer and easier
+      to understand.
+    </p>
+
+    <a href="#ebooks" class="final-btn">
+      Explore All Guides ↑
+    </a>
+
+  </div>
+
+
+
+  <!-- ======================
+       FOOTER
+  ======================= -->
+
+  <footer>
+
+    <strong>
+      INTIMACY UNFILTERED
+    </strong>
+
+    <br>
+
+    Digital educational content for adults.
+
+    <br>
+
+    © 2026 Intimacy Unfiltered
+
+  </footer>
+
+
+</main>
+
+</body>
+</html>
